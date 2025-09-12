@@ -51,44 +51,65 @@ backBtns.forEach(btn => {
   };
 });
 
-// ---- Galería ----
-function setupGallery(modalId, images) {
+// ---- Galería con verificación de extensión ----
+async function checkImageExists(url) {
+  try {
+    const res = await fetch(url, { method: 'HEAD' });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+async function getValidImagePath(basePath) {
+  const extensions = ['.png', '.jpg', '.jpeg'];
+  for (let ext of extensions) {
+    const fullPath = basePath + ext;
+    if (await checkImageExists(fullPath)) {
+      return fullPath;
+    }
+  }
+  return null;
+}
+
+function setupGallery(modalId, imageNames, folder = 'imagenes/') {
   const modal = document.getElementById(modalId);
   const imgEl = modal.querySelector('.modal-img');
   const prevBtn = modal.querySelector('.prev');
   const nextBtn = modal.querySelector('.next');
   let index = 0;
+  let validPaths = [];
+
+  async function loadImages() {
+    for (let name of imageNames) {
+      const path = await getValidImagePath(folder + name);
+      if (path) validPaths.push(path);
+    }
+    showImage();
+  }
 
   function showImage() {
-    imgEl.src = images[index];
+    if (validPaths.length > 0) {
+      imgEl.src = validPaths[index];
+    }
   }
 
   prevBtn.onclick = () => {
-    index = (index - 1 + images.length) % images.length;
+    index = (index - 1 + validPaths.length) % validPaths.length;
     showImage();
   };
 
   nextBtn.onclick = () => {
-    index = (index + 1) % images.length;
+    index = (index + 1) % validPaths.length;
     showImage();
   };
 
-  showImage();
+  loadImages();
 }
 
-// Galerías (cambia por tus imágenes reales en /imagenes/)
-setupGallery('pcModal', [
-  'imagenes/pc-1.png',
-  'imagenes/pc-1.2.png',
-  'imagenes/pc-1.3.png'
-]);
-
-setupGallery('mobileModal', [
-  'imagenes/movil-1.png',
-  'imagenes/movil-1.1.png',
-  'imagenes/movil-1.2.png',
-  'imagenes/movil-1.3.png'
-]);
+// Galerías (usa solo el nombre base, sin extensión)
+setupGallery('pcModal', ['pc-1', 'pc-1.2', 'pc-1.3', 'pc4']);
+setupGallery('mobileModal', ['movil-1', 'movil-1.1', 'movil-1.2', 'movil-1.3']);
 
 // ---- Cerrar al hacer clic fuera ----
 window.onclick = (e) => {
@@ -98,8 +119,3 @@ window.onclick = (e) => {
     mobileModal.style.display = 'none';
   }
 };
-
-
-
-
-

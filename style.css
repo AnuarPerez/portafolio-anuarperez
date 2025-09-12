@@ -1,0 +1,251 @@
+/* ---- General ---- */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1551434678-e076c223a692') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 20px;
+  background: #ff6b6b;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.btn:hover { background: #ff3b3b; }
+
+/* ---- Secciones ---- */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.section p {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+.section ul {
+  max-width: 750px;
+  margin: 20px auto;
+  text-align: left;
+  line-height: 1.7;
+}
+.bg-light { background: #f9f9f9; }
+.timeline { list-style: none; padding: 0; }
+.timeline li { margin: 15px 0; }
+
+/* ---- Tarjetas ---- */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card:hover { transform: scale(1.05); }
+
+/* ---- Grid ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* ---- Contacto ---- */
+.contact a {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* ---- Footer ---- */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* ---- Animaciones Hero ---- */
+.animate-slide { animation: slideIn 1.2s ease-out; }
+.animate-fade { animation: fadeIn 2s ease-in; }
+.animate-bounce { animation: bounce 2s infinite; }
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.fade-up { transform: translateY(40px); }
+.fade-left { transform: translateX(-40px); }
+.fade-right { transform: translateX(40px); }
+
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* ---- Enlace App ---- */
+.app-link {
+  color: #ff6b6b;
+  font-weight: bold;
+  cursor: pointer;
+}
+.app-link:hover { text-decoration: underline; }
+
+/* ---- Modal ---- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  animation: fadeIn 0.5s ease;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+.back-btn {
+  position: absolute;
+  top: 10px; left: 15px;
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.back-btn:hover { background: #ff3b3b; }
+
+/* ---- Botones del modal principal ---- */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.modal-buttons button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.modal-buttons button:hover {
+  background: #ff3b3b;
+}
+
+/* ---- Galería ---- */
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery button {
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.gallery button:hover {
+  background: #ff3b3b;
+}
+
+.modal-img {
+  max-width: 80%;
+  border-radius: 8px;
+}

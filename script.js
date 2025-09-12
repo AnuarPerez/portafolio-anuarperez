@@ -84,7 +84,7 @@ setupGallery('pcModal', [
 ]);
 
 setupGallery('mobileModal', [
-  './imagenes/movil-1.png',
+  'https://github.com/AnuarPerez/portafolio-anuarperez/blob/main/imagenes/movil-1.1.PNG',
   './imagenes/movil-1.1.png',
   './imagenes/movil-1.2.png',
   './imagenes/movil-1.3.png'
@@ -98,4 +98,5 @@ window.onclick = (e) => {
     mobileModal.style.display = 'none';
   }
 };
+
 

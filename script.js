@@ -108,8 +108,8 @@ function setupGallery(modalId, imageNames, folder = 'imagenes/') {
 }
 
 // Galerías (usa solo el nombre base, sin extensión)
-setupGallery('pcModal', ['pc-1', 'pc-1.2', 'pc-1.3', 'pc4']);
-setupGallery('mobileModal', ['movil-1', 'movil-1.1', 'movil-1.2', 'movil-1.3']);
+setupGallery('pcModal', ['pc-1', 'pc-2', 'pc-3']);
+setupGallery('mobileModal', ['movil-1', 'movil-2', 'movil-3', 'movil-4']);
 
 // ---- Cerrar al hacer clic fuera ----
 window.onclick = (e) => {
@@ -119,3 +119,4 @@ window.onclick = (e) => {
     mobileModal.style.display = 'none';
   }
 };
+

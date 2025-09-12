@@ -78,16 +78,16 @@ function setupGallery(modalId, images) {
 
 // Galerías (cambia por tus imágenes reales en /imagenes/)
 setupGallery('pcModal', [
-  'imagenes/pc-1.jpg',
-  'imagenes/pc-1.2.jpg',
-  'imagenes/pc-1.3.jpg'
+  '../imagenes/pc-1.PNG',
+  '../imagenes/pc-1.2.PNG',
+  '../imagenes/pc-1.3.PNG'
 ]);
 
 setupGallery('mobileModal', [
-  'imagenes/movil-1.jpg',
-  'imagenes/movil-1.1.jpg',
-  'imagenes/movil-1.2.jpg',
-  'imagenes/movil-1.3.jpg'
+  '../imagenes/movil-1.PNG',
+  '../imagenes/movil-1.1.PNG',
+  '../imagenes/movil-1.2.PNG',
+  '../imagenes/movil-1.3.PNG'
 ]);
 
 // ---- Cerrar al hacer clic fuera ----
@@ -98,6 +98,7 @@ window.onclick = (e) => {
     mobileModal.style.display = 'none';
   }
 };
+
 
 
 

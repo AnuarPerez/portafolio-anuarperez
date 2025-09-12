@@ -78,16 +78,16 @@ function setupGallery(modalId, images) {
 
 // Galerías (cambia por tus imágenes reales en /imagenes/)
 setupGallery('pcModal', [
-  './imagenes/pc-1.png',
-  './imagenes/pc-1.2.png',
-  './imagenes/pc-1.3.png'
+  'imagenes/pc-1.jpg',
+  'imagenes/pc-1.2.jpg',
+  'imagenes/pc-1.3.jpg'
 ]);
 
 setupGallery('mobileModal', [
-  'https://github.com/AnuarPerez/portafolio-anuarperez/blob/main/imagenes/movil-1.1.PNG',
-  './imagenes/movil-1.1.png',
-  './imagenes/movil-1.2.png',
-  './imagenes/movil-1.3.png'
+  'imagenes/movil-1.jpg',
+  'imagenes/movil-1.1.jpg',
+  'imagenes/movil-1.2.jpg',
+  'imagenes/movil-1.3.jpg'
 ]);
 
 // ---- Cerrar al hacer clic fuera ----
@@ -98,5 +98,6 @@ window.onclick = (e) => {
     mobileModal.style.display = 'none';
   }
 };
+
 
 

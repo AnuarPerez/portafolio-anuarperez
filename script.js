@@ -78,16 +78,16 @@ function setupGallery(modalId, images) {
 
 // Galerías (cambia por tus imágenes reales en /imagenes/)
 setupGallery('pcModal', [
-  'imagenes/pc-1.png',
-  'imagenes/pc-1.2.png',
-  'imagenes/pc-1.3.png'
+  'imagenes/pc1.png',
+  'imagenes/pc2.png',
+  'imagenes/pc3.png'
 ]);
 
 setupGallery('mobileModal', [
-  'imagenes/movil-1.png',
-  'imagenes/movil-1.1.png',
-  'imagenes/movil-1.2.png',
-  'imagenes/movil-1.3.png'
+  'imagenes/movil1.png',
+  'imagenes/movil2.png',
+  'imagenes/movil3.png',
+  'imagenes/movil4.png'
 ]);
 
 // ---- Cerrar al hacer clic fuera ----
